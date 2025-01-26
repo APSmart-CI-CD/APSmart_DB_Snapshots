@@ -4678,7 +4678,7 @@ CREATE TABLE `HFJobsCounter` (
   `ExpireAt` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `IX_HFJobsCounter_Key` (`Key`)
-) ENGINE=InnoDB AUTO_INCREMENT=1663 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1666 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4709,7 +4709,7 @@ CREATE TABLE `HFJobsHash` (
   `ExpireAt` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `IX_HFJobsHash_Key_Field` (`Key`,`Field`)
-) ENGINE=InnoDB AUTO_INCREMENT=1667 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1670 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4729,7 +4729,7 @@ CREATE TABLE `HFJobsJob` (
   `ExpireAt` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `IX_HFJobsJob_StateName` (`StateName`)
-) ENGINE=InnoDB AUTO_INCREMENT=555 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=556 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4748,7 +4748,7 @@ CREATE TABLE `HFJobsJobParameter` (
   UNIQUE KEY `IX_HFJobsJobParameter_JobId_Name` (`JobId`,`Name`),
   KEY `FK_HFJobsJobParameter_Job` (`JobId`),
   CONSTRAINT `FK_HFJobsJobParameter_Job` FOREIGN KEY (`JobId`) REFERENCES `HFJobsJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1673 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1676 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4766,7 +4766,7 @@ CREATE TABLE `HFJobsJobQueue` (
   `FetchToken` varchar(36) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `IX_HFJobsJobQueue_QueueAndFetchedAt` (`Queue`,`FetchedAt`)
-) ENGINE=InnoDB AUTO_INCREMENT=565 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=566 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4835,7 +4835,7 @@ CREATE TABLE `HFJobsSet` (
   `ExpireAt` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `IX_HFJobsSet_Key_Value` (`Key`,`Value`)
-) ENGINE=InnoDB AUTO_INCREMENT=131952 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=131953 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4855,7 +4855,7 @@ CREATE TABLE `HFJobsState` (
   PRIMARY KEY (`Id`),
   KEY `FK_HFJobsHangFire_State_Job` (`JobId`),
   CONSTRAINT `FK_HFJobsHangFire_State_Job` FOREIGN KEY (`JobId`) REFERENCES `HFJobsJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1703 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1706 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64054,4 +64054,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-26 21:42:44
+-- Dump completed on 2025-01-26 21:48:34
