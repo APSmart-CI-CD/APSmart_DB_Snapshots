@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
--- Host: apsmart-main-db-mysql8.c6jssxf3a4wt.us-east-1.rds.amazonaws.com    Database: dbQA
+-- Host: apsmart-main-db-mysql8.c6jssxf3a4wt.us-east-1.rds.amazonaws.com    Database: dbDev
 -- ------------------------------------------------------
 -- Server version	8.0.36
 
@@ -25,9 +25,9 @@ SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -42,9 +42,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -119,9 +119,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -196,9 +196,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -266,9 +266,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -283,9 +283,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -314,9 +314,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -345,9 +345,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -393,9 +393,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -442,9 +442,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -491,9 +491,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -539,9 +539,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -586,9 +586,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -637,9 +637,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -993,9 +993,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1035,9 +1035,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1077,9 +1077,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1114,9 +1114,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1132,7 +1132,7 @@ DELIMITER ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
--- Dumping routines for database 'dbQA'
+-- Dumping routines for database 'dbDev'
 --
 /*!50003 DROP FUNCTION IF EXISTS `AddDays` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -6002,6 +6002,36 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetActiveUsersWithExpiryDates` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `GetActiveUsersWithExpiryDates`(IN ClientIdParam INT)
+BEGIN
+    SELECT 
+        UserId,
+        UserName,
+        Duration,
+        LastPasswordChangeDate,
+        DATE_ADD(LastPasswordChangeDate, INTERVAL Duration DAY) AS ExpireDate,
+        IsActive
+    FROM `User`
+    WHERE 
+        IsActive = 1
+        AND ClientId = ClientIdParam
+        AND (Duration IS NOT NULL AND LastPasswordChangeDate IS NOT NULL);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `GetAdminInvoiceCount` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -7578,6 +7608,33 @@ BEGIN
   AND lid.UserField8 = 'credit'
   ORDER BY i.InvoiceId, i.ScannedDate;
 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetCurrencyExchange` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `GetCurrencyExchange`(
+    IN fromCurrency VARCHAR(10),
+    IN toCurrency VARCHAR(10),
+    IN exchangeDate DATE
+)
+BEGIN
+    SELECT ExchangeRate 
+    FROM DailyExchangeRate
+    WHERE FromCurrency = fromCurrency 
+      AND ToCurrency = toCurrency 
+      AND (Date = exchangeDate OR Date = CURDATE());
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -15903,6 +15960,31 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `InsertCurrencyExchange` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `InsertCurrencyExchange`(
+    IN fromCurrency VARCHAR(10),
+    IN toCurrency VARCHAR(10),
+    IN exchangeDate DATE,
+    IN exchangeRate DECIMAL(18, 6)
+)
+BEGIN
+    INSERT INTO DailyExchangeRate (FromCurrency, ToCurrency, Date, ExchangeRate)
+    VALUES (fromCurrency, toCurrency, exchangeDate, exchangeRate);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `InsertGLByApprover` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -22300,6 +22382,89 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `xxx_Michael` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `xxx_Michael`(
+    IN pClientId INT
+)
+ThisProc:
+
+BEGIN
+    -- Calculate the target date/time
+    SET @TargetDate = DATE_ADD(@CurrentDate, INTERVAL pDaysUntilExpiration DAY);
+
+    -- Select users whose passwords will expire in the specified number of days
+    SELECT 
+	        u.UserId,
+	        CONCAT(u.FirstName, ' ', u.LastName) 						AS FullName,
+	        DATE_ADD(u.LastPasswordChangeDate, INTERVAL u.Duration DAY) AS ExpireDateTime
+    FROM 	`User` u
+			inner JOIN Client 					on Client.ClientId = u.ClientId
+			inner join _x_ClientCompany xcc		ON xcc.ClientId = Client.ClientId -- Currently migrated users
+			LEFT JOIN _x_ClientParameters xcp 	ON xcp.ClientId = Client.ClientId
+													AND xcp.ParamKey = 'PasswordExpiringDays'
+    WHERE 	Client.IsActive = 1
+			AND u.IsActive = 1
+	        AND u.Duration IS NOT NULL 
+	        AND u.LastPasswordChangeDate IS NOT NULL 
+	        AND (pClientId IS NULL OR u.ClientId = pClientId)
+	        AND DATE_ADD(u.LastPasswordChangeDate, INTERVAL u.Duration DAY) 
+	            BETWEEN @CurrentDateTime AND @TargetDate
+    ORDER 	BY ExpireDateTime ASC;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `xxx_Michael_Steven` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `xxx_Michael_Steven`(
+    IN pClientId INT
+)
+ThisProc:BEGIN
+
+    -- Select users whose passwords will expire within the specified number of days (default to 7 if not defined)
+    SELECT 
+			if(u.IsCloudxUser = 1, 'CloudX', Client.CustomerName) 									AS Client,
+	        CONCAT(u.FirstName, ' ', u.LastName) 													AS FullName,
+	        max(DATE_ADD(u.LastPasswordChangeDate, INTERVAL Security_Password_ExpirationDays DAY)) 	AS ExpiringOn,
+	        max(u.UserId) 																			as UserId
+    FROM 	User u
+			inner JOIN Client 					on Client.ClientId = u.ClientId
+			inner join _x_Client xc				ON xc.ClientId = Client.ClientId -- Currently migrated Clients
+			LEFT JOIN _x_ClientParameters xcp 	ON xcp.ClientId = Client.ClientId
+													AND xcp.ParamKey = 'PasswordExpiringDays'
+    WHERE 	Client.IsActive = 1
+			AND u.IsActive = 1
+			AND u.LastPasswordChangeDate IS not null
+			AND datediff(date(date_add(LastPasswordChangeDate, INTERVAL Security_Password_ExpirationDays day)), utc_date()) BETWEEN 0 AND ifnull(xcp.ParamValue, 7)
+	GROUP 	BY Client, FullName
+    ORDER 	BY IF(Client='CloudX', 1, 9), Client, FullName;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `zz_InvoicesInLimbo` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -23489,11 +23654,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_Completed`(IN pInvoiceIds text,
 IN pPaymentId varchar(100),
@@ -23560,11 +23725,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_FakeError`(
 -- noformat 
@@ -23609,7 +23774,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_GetClients`()
 BEGIN
@@ -23661,7 +23826,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_GetClientsForStatusUpdate`()
 BEGIN
@@ -23709,7 +23874,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_GetInvoices`(IN `pClientId` int,
 IN pCompanyCode varchar(50))
@@ -23762,7 +23927,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_GetStatusFromProvider`(IN `pClientId` int,
 IN pCompanyCode varchar(50))
@@ -23812,11 +23977,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_UpdateInvoiceStatus`(
 -- noformat
@@ -30578,11 +30743,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_DataLoadGLCode`(IN pType tinyint, IN pGLCodeId int,
                                                          IN pGLCodeName varchar(250), IN pDescription varchar(500),
@@ -30686,11 +30851,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_DataLoadVendor`(IN pType tinyint,
 IN pClientId int,
@@ -36675,6 +36840,105 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `_x_InvoiceArchive` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_InvoiceArchive`(
+-- noformat 
+	IN pInvoiceId 		int,
+	IN pClientId 		int,
+	IN pUserId 			char(36),
+	IN pReason	 		longtext
+	)
+ThisProc:BEGIN
+
+
+	-- Get security
+	SELECT	max(cr.isAdmin), ifnull(Max(case WHEN crf.FunctionKey IN ('InvoiceUpdate', 'InvoiceApprove') THEN crf.access ELSE 0 end), 0)
+	INTO 	@isAdmin, @isAllowed
+	FROM	ClientUserRoles cur
+	 		INNER JOIN	ClientRoles cr				ON cr.RoleId = cur.RoleId
+			left JOIN 	ClientRoleFunctions crf		ON crf.RoleId = cr.RoleId
+	WHERE	cur.UserId = pUserId;
+	SET @isAllowed = IF(@isAdmin = 1, 1, @isAllowed); 
+
+
+	-- Get Invoice Info
+	SELECT	i.InvoiceType, i.IsPaused, i.isDeleted, i.ApprovalStatusId
+	INTO	@InvoiceType, @IsPaused, @isDeleted, @ApprovalStatusId
+	FROM 	Invoice i
+	WHERE 	i.ClientId = pClientId
+			AND i.InvoiceId = pInvoiceId;
+
+	-- Check if the invoice is in the right state to do this action
+	IF @IsDeleted = 1 THEN
+		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice is already deleted.', MYSQL_ERRNO = 1;
+		LEAVE ThisProc;
+	elseIF @InvoiceType = 'Archive' THEN
+		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice has already been archived.', MYSQL_ERRNO = 1;
+		LEAVE ThisProc;
+	ElseIF NOT @ApprovalStatusId IN (1,3,4,5,6,8) THEN
+		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice is not in an actionable status.', MYSQL_ERRNO = 1;
+		LEAVE ThisProc;
+	end if;
+
+
+	-- if not an admin, check if this is in their queue
+	IF @isAdmin = 0 then
+		set @Position	= NULL;
+		set @Total 		= null;
+		call _x_InvoiceMyQueue(pUserId, pInvoiceId, 1, 0, 0, null, @Position, @Total);
+	
+		if @Position is null then 
+			SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'The invoice is no longer in your queue.', MYSQL_ERRNO = 1;
+			LEAVE ThisProc;
+		end if;
+	END if;
+
+
+
+	--
+	-- Do the action, all business logic passed
+	--
+	call _x_InvoiceUpdateDataChanges(pInvoiceId, pClientId, pUserId, 'Before');
+
+	delete FROM PausedInvoice where InvoiceId = pInvoiceId;
+
+	UPDATE	Invoice 	set 
+			IsPaused 		= False,
+			InvoiceType 	= 'Archive',
+			ArchiveReason	= pReason,
+			LastActionBy	= pUserId,
+			LastActionDate 	= UTC_TIMESTAMP()
+	WHERE	InvoiceId = pInvoiceId
+			AND ClientId = pClientId;
+	
+	Insert into InvoiceArchiveReason(ClientId, ArchiveReason, TotalCount, LastUsed)
+		values(pClientId, pReason, 1, date(UTC_TIMESTAMP()))
+		on Duplicate key Update TotalCount = TotalCount + 1, LastUsed = date(LastUsed);
+
+	Delete 	from UserInvoiceAssignment
+			where InvoiceId = pInvoiceId;
+
+	Delete	from UserNotification
+			where LinkPage = 'Invoice' and LinkValue = pInvoiceId and ReadStatus = 0;
+
+	call _x_InvoiceUpdateDataChanges(pInvoiceId, pClientId, pUserId, 'After');
+
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `_x_InvoiceById` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -36952,9 +37216,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -37735,14 +37999,14 @@ ThisProc:BEGIN
 	IF @IsDeleted = 1 THEN
 		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice is already deleted.', MYSQL_ERRNO = 1;
 		LEAVE ThisProc;
-	elseIF @InvoiceType = 'Archive' THEN
+	elseIF @InvoiceType = 'Archive' AND pIsPaused = true THEN
 		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice has already been archived.', MYSQL_ERRNO = 1;
 		LEAVE ThisProc;
 	ElseIF @IsPaused = pIsPaused THEN
 		SET @Msg = concat('This invoice has already been ', if(pIsPaused, 'paused', 'unpaused'), '.');
 		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = @Msg, MYSQL_ERRNO = 1;
 		LEAVE ThisProc;
-	ElseIF NOT @ApprovalStatusId IN (1,3,4,5,6,8) THEN
+	ElseIF pIsPaused = TRUE AND NOT @ApprovalStatusId IN (1,3,4,5,6,8) THEN
 		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice is not in an actionable status.', MYSQL_ERRNO = 1;
 		LEAVE ThisProc;
 	end if;
@@ -37772,7 +38036,8 @@ ThisProc:BEGIN
 
 	IF (pIsPaused = TRUE) THEN /*Pause Invoice*/
 		UPDATE	Invoice set 
-				IsPaused = TRUE,
+				IsPaused 		= TRUE,
+				LastActionBy	= pUserId,
 				LastActionDate = UTC_TIMESTAMP()
 		WHERE	InvoiceId = pInvoiceId
 				AND ClientId = pClientId;
@@ -37782,6 +38047,9 @@ ThisProc:BEGIN
 			on duplicate key 	update 	PauseBy		= pUserId,
 										PausedDate 	= UTC_TIMESTAMP(),
 										Comment		= pComment;
+
+		Delete	from UserNotification
+				where LinkPage = 'Invoice' and LinkValue = pInvoiceId and ReadStatus = 0;
 
 		set @Message = null;
 		select 	concat('Invoice paused for', char(13), char(10), VendorName, char(13), char(10), pComment)
@@ -37795,7 +38063,10 @@ ThisProc:BEGIN
 	
 	ELSEIF (pIsPaused = FALSE) THEN /*Unpause Invoice*/
 
-		UPDATE	Invoice		SET IsPaused = FALSE
+		UPDATE	Invoice		SET 
+				IsPaused 		= FALSE,
+				LastActionBy	= pUserId,
+				LastActionDate = UTC_TIMESTAMP()
 		WHERE	InvoiceId = pInvoiceId
 				AND ClientId = pClientId;
 		
@@ -37810,7 +38081,7 @@ ThisProc:BEGIN
 				and Data.LinkPage = 'Invoice' 
 				and Data.LinkValue = pInvoiceId 
 				and Data.ReadDate is null;
-		
+	
 	END IF;
 
 	call _x_InvoiceUpdateDataChanges(pInvoiceId, pClientId, pUserId, 'After');
@@ -40379,7 +40650,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentApprovalGenerate`(IN pClientId int, IN pFirstTime int)
 ThisProc:
@@ -40646,7 +40917,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentApprove`(
 -- noformat
@@ -40720,11 +40991,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentCancel`(IN pUserId varchar(36), IN pInvoiceIdList text)
 ThisProc:
@@ -40792,11 +41063,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentCheckEnabled`(IN pClientId int,
 IN pActionType varchar(50),
@@ -40828,11 +41099,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentDiscount`(IN `pClientId` int,
 IN `pInvoiceId` int,
@@ -47436,11 +47707,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_SigninReset`(IN pType tinyint, IN pClientId int, IN pUsername varchar(50),
                                                       IN pPassword varchar(50), IN pAccessCode varchar(50),
@@ -54626,6 +54897,29 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `__ToggleClientStatus` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `__ToggleClientStatus`(IN pClientId int, IN pIsActive boolean)
+ThisProc:
+	BEGIN	
+       UPDATE Client
+    SET IsActive = pIsActive
+    WHERE ClientId =  pClientId;
+
+	END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54637,4 +54931,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-26 21:47:51
+-- Dump completed on 2025-01-27 15:59:23
