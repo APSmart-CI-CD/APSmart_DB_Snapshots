@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
--- Host: apsmart-main-db-mysql8.c6jssxf3a4wt.us-east-1.rds.amazonaws.com    Database: dbQA
+-- Host: apsmart-main-db-mysql8.c6jssxf3a4wt.us-east-1.rds.amazonaws.com    Database: dbDev
 -- ------------------------------------------------------
 -- Server version	8.0.36
 
@@ -552,7 +552,7 @@ CREATE TABLE `Address` (
   PRIMARY KEY (`AddressId`),
   KEY `IX_StateId` (`StateId`) USING BTREE,
   CONSTRAINT `Address_ibfk_1` FOREIGN KEY (`StateId`) REFERENCES `State` (`StateId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=50294233 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50294259 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -632,7 +632,7 @@ CREATE TABLE `AlertClientInstance` (
   PRIMARY KEY (`AlertId`),
   KEY `AlertClientInstance_AlertClient` (`AlertKey`,`ClientId`) USING BTREE,
   CONSTRAINT `AlertClientInstance_ibfk_1` FOREIGN KEY (`AlertKey`, `ClientId`) REFERENCES `AlertClient` (`AlertKey`, `ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -780,27 +780,27 @@ CREATE TABLE `ApprovalHistory` (
   KEY `FK_ApprovalHistory_SubCategory1` (`SubCategory1`) USING BTREE,
   KEY `FK_ApprovalHistory_SubCategory2` (`SubCategory2`) USING BTREE,
   CONSTRAINT `ApprovalHistory_ibfk_1` FOREIGN KEY (`OrgId`) REFERENCES `OrgData` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_10` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_11` FOREIGN KEY (`GLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_12` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_13` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_14` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_15` FOREIGN KEY (`ProjectId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_16` FOREIGN KEY (`SubCategory1`) REFERENCES `SubCategrory` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_17` FOREIGN KEY (`SubCategory2`) REFERENCES `SubCategrory` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_18` FOREIGN KEY (`SubProjectId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_19` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_2` FOREIGN KEY (`AccountingVariable1`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_20` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_21` FOREIGN KEY (`WithholdingTaxId`) REFERENCES `WithHoldingTax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_3` FOREIGN KEY (`AccountingVariable2`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_4` FOREIGN KEY (`AccountingVariable3`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_5` FOREIGN KEY (`AccountingVariable4`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_6` FOREIGN KEY (`Category1`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_7` FOREIGN KEY (`Category2`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_8` FOREIGN KEY (`CategoryId`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `ApprovalHistory_ibfk_9` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=7835573 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `ApprovalHistory_ibfk_10` FOREIGN KEY (`SubProjectId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_11` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_12` FOREIGN KEY (`AccountingVariable1`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_13` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_14` FOREIGN KEY (`WithholdingTaxId`) REFERENCES `WithHoldingTax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_15` FOREIGN KEY (`AccountingVariable2`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_16` FOREIGN KEY (`AccountingVariable3`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_17` FOREIGN KEY (`AccountingVariable4`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_18` FOREIGN KEY (`Category1`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_19` FOREIGN KEY (`Category2`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_2` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_20` FOREIGN KEY (`CategoryId`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_21` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_3` FOREIGN KEY (`GLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_4` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_5` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_6` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_7` FOREIGN KEY (`ProjectId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_8` FOREIGN KEY (`SubCategory1`) REFERENCES `SubCategrory` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `ApprovalHistory_ibfk_9` FOREIGN KEY (`SubCategory2`) REFERENCES `SubCategrory` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=7835617 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -911,7 +911,7 @@ CREATE TABLE `ApprovalSubStepCatchAllUsers` (
   KEY `IX_UserId` (`UserId`) USING BTREE,
   CONSTRAINT `ApprovalSubStepCatchAllUsers_ibfk_1` FOREIGN KEY (`ApprovalSubStepId`) REFERENCES `ApprovalSubStep` (`ApprovalSubStepId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `ApprovalSubStepCatchAllUsers_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=10417 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10418 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1077,9 +1077,9 @@ CREATE TABLE `ApprovalSubStepUserVendor` (
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1282,7 +1282,7 @@ CREATE TABLE `ApproverByAmount` (
   CONSTRAINT `ApproverByAmount_ibfk_2` FOREIGN KEY (`SecondApproverId`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `ApproverByAmount_ibfk_3` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `ApproverByAmount_ibfk_4` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=87476 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=87480 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1325,7 +1325,7 @@ CREATE TABLE `ApproverGLCode` (
   KEY `IX_UserId` (`UserId`) USING BTREE,
   CONSTRAINT `ApproverGLCode_ibfk_1` FOREIGN KEY (`GLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `ApproverGLCode_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=3295278 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3295287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1376,9 +1376,9 @@ CREATE TABLE `ApproverSetting` (
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1453,9 +1453,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1530,9 +1530,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1610,7 +1610,7 @@ CREATE TABLE `ArchiveReason` (
   `ArchiveReason` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `ClientId` int NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3271 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3285 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1634,7 +1634,7 @@ CREATE TABLE `AuditorAssigment` (
   CONSTRAINT `AuditorAssigment_ibfk_1` FOREIGN KEY (`InvoiceID`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `AuditorAssigment_ibfk_2` FOREIGN KEY (`AssignedBy`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `AuditorAssigment_ibfk_3` FOREIGN KEY (`AuditorID`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=2434 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2655 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1660,7 +1660,7 @@ CREATE TABLE `AuditorReviewHistory` (
   CONSTRAINT `AuditorReviewHistory_AuditorId` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`),
   CONSTRAINT `AuditorReviewHistory_ClientId` FOREIGN KEY (`AuditorID`) REFERENCES `User` (`UserId`),
   CONSTRAINT `AuditorReviewHistory_InvoiceId` FOREIGN KEY (`InvoiceID`) REFERENCES `Invoice` (`InvoiceId`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AVG_ROW_LENGTH=3276 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AVG_ROW_LENGTH=3276 ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1681,7 +1681,7 @@ CREATE TABLE `AuditorsComments` (
   KEY `IX_InvoiceID` (`InvoiceID`) USING BTREE,
   CONSTRAINT `AuditorsComments_ibfk_1` FOREIGN KEY (`InvoiceID`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `AuditorsComments_ibfk_2` FOREIGN KEY (`AuditorID`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1709,9 +1709,9 @@ CREATE TABLE `AutoApproveReport` (
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -1767,7 +1767,7 @@ CREATE TABLE `Batch` (
   `SenderAndReceiverUpdatedDate` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `ReceivedBatchName` (`ReceivedBatchName`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6600605 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6600696 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1927,22 +1927,22 @@ CREATE TABLE `CSVInvoice` (
   KEY `CSVSubProjectId` (`SubProjectTypeId`) USING BTREE,
   KEY `IX_CustomerId` (`CustomerId`) USING BTREE,
   CONSTRAINT `CSVInvoice_ibfk_1` FOREIGN KEY (`BillToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_10` FOREIGN KEY (`RemitToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_11` FOREIGN KEY (`ShippedToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_12` FOREIGN KEY (`BatchID`) REFERENCES `CSVBatch` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_13` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_14` FOREIGN KEY (`CustomerLocationId`) REFERENCES `CustomerLocation` (`CustomerLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_15` FOREIGN KEY (`VendorSiteId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_16` FOREIGN KEY (`ApprovalStatusId`) REFERENCES `InvoiceStatus` (`StateId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_17` FOREIGN KEY (`ParentInvoiceId`) REFERENCES `CSVInvoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_2` FOREIGN KEY (`LocationId`) REFERENCES `Location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_3` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_4` FOREIGN KEY (`VerifierId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_5` FOREIGN KEY (`VendorLocationId`) REFERENCES `VendorLocation` (`VendorLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_6` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_7` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_8` FOREIGN KEY (`SubProjectTypeId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `CSVInvoice_ibfk_9` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `CSVInvoice_ibfk_10` FOREIGN KEY (`LocationId`) REFERENCES `Location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_11` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_12` FOREIGN KEY (`VerifierId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_13` FOREIGN KEY (`VendorLocationId`) REFERENCES `VendorLocation` (`VendorLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_14` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_15` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_16` FOREIGN KEY (`SubProjectTypeId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_17` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_2` FOREIGN KEY (`RemitToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_3` FOREIGN KEY (`ShippedToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_4` FOREIGN KEY (`BatchID`) REFERENCES `CSVBatch` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_5` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_6` FOREIGN KEY (`CustomerLocationId`) REFERENCES `CustomerLocation` (`CustomerLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_7` FOREIGN KEY (`VendorSiteId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_8` FOREIGN KEY (`ApprovalStatusId`) REFERENCES `InvoiceStatus` (`StateId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `CSVInvoice_ibfk_9` FOREIGN KEY (`ParentInvoiceId`) REFERENCES `CSVInvoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=2713844 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2202,8 +2202,8 @@ CREATE TABLE `Client` (
   `POSafetyNotificationEmails` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `Enable2FA` tinyint(1) DEFAULT '0',
   `TwoFACodeDeliveryType` tinyint DEFAULT '0',
-  `IntegrationAPIKey` varchar(250) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `CustomerShortName` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `IntegrationAPIKey` varchar(250) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`ClientId`),
   KEY `IX_AddressId` (`AddressId`) USING BTREE,
   KEY `CreditCardVendorId` (`CreditCardVendorId`) USING BTREE,
@@ -2214,9 +2214,9 @@ CREATE TABLE `Client` (
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -2365,7 +2365,7 @@ CREATE TABLE `ClientEmployeeType` (
   PRIMARY KEY (`EmployeeTypeId`),
   KEY `ClientEmployeeType_ClientId` (`ClientId`),
   CONSTRAINT `ClientEmployeeType_ClientId` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AVG_ROW_LENGTH=256 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AVG_ROW_LENGTH=256 ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2402,12 +2402,12 @@ CREATE TABLE `ClientExpenseCategory` (
   `Tooltip` varchar(200) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `AllowQtyOrAmount` char(1) COLLATE utf8mb4_general_ci DEFAULT (_utf8mb3'Q'),
   `GLCode` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `isReceiptRequired` bit(1) NOT NULL DEFAULT (0x31),
-  `isActive` bit(1) NOT NULL DEFAULT (0x31),
+  `isReceiptRequired` bit(1) NOT NULL DEFAULT (1),
+  `isActive` bit(1) NOT NULL DEFAULT (1),
   PRIMARY KEY (`ExpenseCategoryId`),
   KEY `ClientExpenseCategory_ClientId` (`ClientId`),
   CONSTRAINT `ClientExpenseCategory_ClientId` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AVG_ROW_LENGTH=512 ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2425,12 +2425,12 @@ CREATE TABLE `ClientExpenseCategoryByEmployeeType` (
   `QtyRate` decimal(18,2) DEFAULT NULL,
   `AmountMin` decimal(18,2) DEFAULT NULL,
   `AmountMax` decimal(18,2) DEFAULT NULL,
-  `isActive` bit(1) NOT NULL DEFAULT (0x31),
+  `isActive` bit(1) NOT NULL DEFAULT (1),
   PRIMARY KEY (`ExpenseCategoryId`,`EmployeeTypeId`),
   KEY `ClientExpenseCategoryByEmployeeType_EmployeeTypeId` (`EmployeeTypeId`),
   CONSTRAINT `ClientExpenseCategoryByEmployeeType_EmployeeTypeId` FOREIGN KEY (`EmployeeTypeId`) REFERENCES `ClientEmployeeType` (`EmployeeTypeId`),
   CONSTRAINT `ClientExpenseCategoryByEmployeeType_ExpenseCategoryId` FOREIGN KEY (`ExpenseCategoryId`) REFERENCES `ClientExpenseCategory` (`ExpenseCategoryId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci AVG_ROW_LENGTH=128 ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2735,7 +2735,7 @@ CREATE TABLE `ClientRoles` (
   PRIMARY KEY (`RoleId`),
   KEY `ClientRoles_ClientId` (`ClientId`) USING BTREE,
   CONSTRAINT `ClientRoles_ibfk_1` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2797,9 +2797,9 @@ CREATE TABLE `ClientSpecificConfigDefReport` (
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -3419,9 +3419,9 @@ CREATE TABLE `DelegationHistory` (
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -3467,9 +3467,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -3516,9 +3516,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -3605,7 +3605,7 @@ CREATE TABLE `Department` (
   CONSTRAINT `Department_ibfk_6` FOREIGN KEY (`ClientCompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `Department_ibfk_7` FOREIGN KEY (`ParentDepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `Department_ibfk_8` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=10129143 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10129142 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4070,9 +4070,9 @@ CREATE TABLE `EscalationHistory` (
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -4118,9 +4118,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -4165,9 +4165,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -4294,7 +4294,7 @@ CREATE TABLE `Exception` (
   KEY `IX_ExceptionTypeId` (`ExceptionTypeId`) USING BTREE,
   KEY `IX_InvoiceId` (`InvoiceId`) USING BTREE,
   CONSTRAINT `Exception_ibfk_1` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=5549406 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5549444 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4319,7 +4319,7 @@ CREATE TABLE `ExceptionHistory` (
   CONSTRAINT `ExceptionHistory_ibfk_1` FOREIGN KEY (`ExceptionTypeId`) REFERENCES `ExceptionType` (`ExceptionId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `ExceptionHistory_ibfk_2` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `ExceptionHistory_ibfk_3` FOREIGN KEY (`ExceptionHandlerId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=4973644 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4973676 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4345,15 +4345,17 @@ DROP TABLE IF EXISTS `ExpenseSmart_OTP`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ExpenseSmart_OTP` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `UserId` char(36) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `OtpCode` char(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `DeviceId` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `UserId` char(108) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `OtpCode` char(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `DeviceId` varchar(300) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ExpirationTime` datetime DEFAULT NULL,
   `Attempts` int DEFAULT NULL,
   `DateCreated` datetime DEFAULT NULL,
-  `IsVerified` tinyint(1) DEFAULT '0',
-  KEY `Id` (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `IsVerified` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `FK_UserId_Constarint` (`UserId`),
+  CONSTRAINT `FK_UserId_Constarint` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4383,8 +4385,8 @@ DROP TABLE IF EXISTS `ExpenseSmart_UserExpenseHeader`;
 CREATE TABLE `ExpenseSmart_UserExpenseHeader` (
   `ExpenseId` int NOT NULL AUTO_INCREMENT,
   `UniqueId` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `Version` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `UserId` char(36) COLLATE utf8mb4_general_ci NOT NULL,
+  `Version` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `UserId` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Description` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `PeriodDate1` char(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `PeriodDate2` char(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -4394,7 +4396,7 @@ CREATE TABLE `ExpenseSmart_UserExpenseHeader` (
   PRIMARY KEY (`ExpenseId`),
   KEY `ExpenseSmart_UserExpenseHeader_UserId` (`UserId`),
   CONSTRAINT `ExpenseSmart_UserExpenseHeader_UserId` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4420,7 +4422,7 @@ CREATE TABLE `ExpenseSmart_UserExpenseLine` (
   PRIMARY KEY (`ExpenseLineId`),
   KEY `ExpenseSmart_UserExpenseLine_ExpenseId` (`ExpenseId`),
   CONSTRAINT `ExpenseSmart_UserExpenseLine_ExpenseId` FOREIGN KEY (`ExpenseId`) REFERENCES `ExpenseSmart_UserExpenseHeader` (`ExpenseId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4460,7 +4462,7 @@ CREATE TABLE `ExportList` (
   KEY `IX_InvoiceId` (`InvoiceId`) USING BTREE,
   CONSTRAINT `ExportList_ibfk_1` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `ExportList_ibfk_2` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=467094 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=467081 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4563,14 +4565,14 @@ CREATE TABLE `GLCode` (
   CONSTRAINT `GLCode_ibfk_2` FOREIGN KEY (`Category2`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `GLCode_ibfk_3` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `GLCode_ibfk_4` FOREIGN KEY (`ClientCompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=1557828383 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1557828384 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -4661,7 +4663,7 @@ CREATE TABLE `HFJobsAggregatedCounter` (
   `ExpireAt` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `IX_HFJobsCounterAggregated_Key` (`Key`)
-) ENGINE=InnoDB AUTO_INCREMENT=900 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1641 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4678,7 +4680,7 @@ CREATE TABLE `HFJobsCounter` (
   `ExpireAt` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `IX_HFJobsCounter_Key` (`Key`)
-) ENGINE=InnoDB AUTO_INCREMENT=1666 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4186 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4709,7 +4711,7 @@ CREATE TABLE `HFJobsHash` (
   `ExpireAt` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `IX_HFJobsHash_Key_Field` (`Key`,`Field`)
-) ENGINE=InnoDB AUTO_INCREMENT=1670 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3530 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4729,7 +4731,7 @@ CREATE TABLE `HFJobsJob` (
   `ExpireAt` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `IX_HFJobsJob_StateName` (`StateName`)
-) ENGINE=InnoDB AUTO_INCREMENT=556 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1178 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4748,7 +4750,7 @@ CREATE TABLE `HFJobsJobParameter` (
   UNIQUE KEY `IX_HFJobsJobParameter_JobId_Name` (`JobId`,`Name`),
   KEY `FK_HFJobsJobParameter_Job` (`JobId`),
   CONSTRAINT `FK_HFJobsJobParameter_Job` FOREIGN KEY (`JobId`) REFERENCES `HFJobsJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1676 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6893 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4766,7 +4768,7 @@ CREATE TABLE `HFJobsJobQueue` (
   `FetchToken` varchar(36) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `IX_HFJobsJobQueue_QueueAndFetchedAt` (`Queue`,`FetchedAt`)
-) ENGINE=InnoDB AUTO_INCREMENT=566 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4526 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4835,7 +4837,7 @@ CREATE TABLE `HFJobsSet` (
   `ExpireAt` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `IX_HFJobsSet_Key_Value` (`Key`,`Value`)
-) ENGINE=InnoDB AUTO_INCREMENT=131953 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=322757 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4855,7 +4857,571 @@ CREATE TABLE `HFJobsState` (
   PRIMARY KEY (`Id`),
   KEY `FK_HFJobsHangFire_State_Job` (`JobId`),
   CONSTRAINT `FK_HFJobsHangFire_State_Job` FOREIGN KEY (`JobId`) REFERENCES `HFJobsJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1706 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=17276 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReAggregatedCounter`
+--
+
+DROP TABLE IF EXISTS `HFReAggregatedCounter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReAggregatedCounter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` int NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFReCounterAggregated_Key` (`Key`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReCounter`
+--
+
+DROP TABLE IF EXISTS `HFReCounter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReCounter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` int NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_HFReCounter_Key` (`Key`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReDistributedLock`
+--
+
+DROP TABLE IF EXISTS `HFReDistributedLock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReDistributedLock` (
+  `Resource` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReHash`
+--
+
+DROP TABLE IF EXISTS `HFReHash`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReHash` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Field` varchar(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` longtext,
+  `ExpireAt` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFReHash_Key_Field` (`Key`,`Field`)
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReJob`
+--
+
+DROP TABLE IF EXISTS `HFReJob`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReJob` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `StateId` int DEFAULT NULL,
+  `StateName` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `InvocationData` longtext NOT NULL,
+  `Arguments` longtext NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `ExpireAt` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_HFReJob_StateName` (`StateName`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReJobParameter`
+--
+
+DROP TABLE IF EXISTS `HFReJobParameter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReJobParameter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `Name` varchar(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` longtext,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFReJobParameter_JobId_Name` (`JobId`,`Name`),
+  KEY `FK_HFReJobParameter_Job` (`JobId`),
+  CONSTRAINT `FK_HFReJobParameter_Job` FOREIGN KEY (`JobId`) REFERENCES `HFReJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReJobState`
+--
+
+DROP TABLE IF EXISTS `HFReJobState`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReJobState` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `Name` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Reason` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `Data` longtext,
+  PRIMARY KEY (`Id`),
+  KEY `FK_HFReJobState_Job` (`JobId`),
+  CONSTRAINT `FK_HFReJobState_Job` FOREIGN KEY (`JobId`) REFERENCES `HFReJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReList`
+--
+
+DROP TABLE IF EXISTS `HFReList`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReList` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` longtext,
+  `ExpireAt` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReServer`
+--
+
+DROP TABLE IF EXISTS `HFReServer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReServer` (
+  `Id` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Data` longtext NOT NULL,
+  `LastHeartbeat` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReSet`
+--
+
+DROP TABLE IF EXISTS `HFReSet`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReSet` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` varchar(256) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Score` float NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFReSet_Key_Value` (`Key`,`Value`)
+) ENGINE=InnoDB AUTO_INCREMENT=666 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFReState`
+--
+
+DROP TABLE IF EXISTS `HFReState`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFReState` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `Name` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Reason` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `Data` longtext,
+  PRIMARY KEY (`Id`),
+  KEY `FK_HFReHangFire_State_Job` (`JobId`),
+  CONSTRAINT `FK_HFReHangFire_State_Job` FOREIGN KEY (`JobId`) REFERENCES `HFReJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepAggregatedCounter`
+--
+
+DROP TABLE IF EXISTS `HFRepAggregatedCounter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepAggregatedCounter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` int NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFRepCounterAggregated_Key` (`Key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepCounter`
+--
+
+DROP TABLE IF EXISTS `HFRepCounter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepCounter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` int NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_HFRepCounter_Key` (`Key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepDistributedLock`
+--
+
+DROP TABLE IF EXISTS `HFRepDistributedLock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepDistributedLock` (
+  `Resource` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepHash`
+--
+
+DROP TABLE IF EXISTS `HFRepHash`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepHash` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Field` varchar(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` longtext,
+  `ExpireAt` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFRepHash_Key_Field` (`Key`,`Field`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepJob`
+--
+
+DROP TABLE IF EXISTS `HFRepJob`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepJob` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `StateId` int DEFAULT NULL,
+  `StateName` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `InvocationData` longtext NOT NULL,
+  `Arguments` longtext NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `ExpireAt` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_HFRepJob_StateName` (`StateName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepJobParameter`
+--
+
+DROP TABLE IF EXISTS `HFRepJobParameter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepJobParameter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `Name` varchar(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` longtext,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFRepJobParameter_JobId_Name` (`JobId`,`Name`),
+  KEY `FK_HFRepJobParameter_Job` (`JobId`),
+  CONSTRAINT `FK_HFRepJobParameter_Job` FOREIGN KEY (`JobId`) REFERENCES `HFRepJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepJobQueue`
+--
+
+DROP TABLE IF EXISTS `HFRepJobQueue`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepJobQueue` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `FetchedAt` datetime(6) DEFAULT NULL,
+  `Queue` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `FetchToken` varchar(36) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_HFRepJobQueue_QueueAndFetchedAt` (`Queue`,`FetchedAt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepJobState`
+--
+
+DROP TABLE IF EXISTS `HFRepJobState`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepJobState` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `Name` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Reason` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `Data` longtext,
+  PRIMARY KEY (`Id`),
+  KEY `FK_HFRepJobState_Job` (`JobId`),
+  CONSTRAINT `FK_HFRepJobState_Job` FOREIGN KEY (`JobId`) REFERENCES `HFRepJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepSet`
+--
+
+DROP TABLE IF EXISTS `HFRepSet`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepSet` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` varchar(256) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Score` float NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFRepSet_Key_Value` (`Key`,`Value`)
+) ENGINE=InnoDB AUTO_INCREMENT=761 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoAggregatedCounter`
+--
+
+DROP TABLE IF EXISTS `HFRepoAggregatedCounter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoAggregatedCounter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` int NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFRepoCounterAggregated_Key` (`Key`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoCounter`
+--
+
+DROP TABLE IF EXISTS `HFRepoCounter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoCounter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` int NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_HFRepoCounter_Key` (`Key`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoDistributedLock`
+--
+
+DROP TABLE IF EXISTS `HFRepoDistributedLock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoDistributedLock` (
+  `Resource` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoHash`
+--
+
+DROP TABLE IF EXISTS `HFRepoHash`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoHash` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Field` varchar(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` longtext,
+  `ExpireAt` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFRepoHash_Key_Field` (`Key`,`Field`)
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoJob`
+--
+
+DROP TABLE IF EXISTS `HFRepoJob`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoJob` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `StateId` int DEFAULT NULL,
+  `StateName` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `InvocationData` longtext NOT NULL,
+  `Arguments` longtext NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `ExpireAt` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_HFRepoJob_StateName` (`StateName`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoJobParameter`
+--
+
+DROP TABLE IF EXISTS `HFRepoJobParameter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoJobParameter` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `Name` varchar(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` longtext,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFRepoJobParameter_JobId_Name` (`JobId`,`Name`),
+  KEY `FK_HFRepoJobParameter_Job` (`JobId`),
+  CONSTRAINT `FK_HFRepoJobParameter_Job` FOREIGN KEY (`JobId`) REFERENCES `HFRepoJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoJobQueue`
+--
+
+DROP TABLE IF EXISTS `HFRepoJobQueue`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoJobQueue` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `FetchedAt` datetime(6) DEFAULT NULL,
+  `Queue` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `FetchToken` varchar(36) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `IX_HFRepoJobQueue_QueueAndFetchedAt` (`Queue`,`FetchedAt`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoJobState`
+--
+
+DROP TABLE IF EXISTS `HFRepoJobState`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoJobState` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `Name` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Reason` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `Data` longtext,
+  PRIMARY KEY (`Id`),
+  KEY `FK_HFRepoJobState_Job` (`JobId`),
+  CONSTRAINT `FK_HFRepoJobState_Job` FOREIGN KEY (`JobId`) REFERENCES `HFRepoJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoList`
+--
+
+DROP TABLE IF EXISTS `HFRepoList`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoList` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` longtext,
+  `ExpireAt` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoServer`
+--
+
+DROP TABLE IF EXISTS `HFRepoServer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoServer` (
+  `Id` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Data` longtext NOT NULL,
+  `LastHeartbeat` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoSet`
+--
+
+DROP TABLE IF EXISTS `HFRepoSet`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoSet` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Key` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Value` varchar(256) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Score` float NOT NULL,
+  `ExpireAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_HFRepoSet_Key_Value` (`Key`,`Value`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `HFRepoState`
+--
+
+DROP TABLE IF EXISTS `HFRepoState`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `HFRepoState` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `JobId` int NOT NULL,
+  `Name` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Reason` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `CreatedAt` datetime(6) NOT NULL,
+  `Data` longtext,
+  PRIMARY KEY (`Id`),
+  KEY `FK_HFRepoHangFire_State_Job` (`JobId`),
+  CONSTRAINT `FK_HFRepoHangFire_State_Job` FOREIGN KEY (`JobId`) REFERENCES `HFRepoJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4889,7 +5455,7 @@ CREATE TABLE `HangfireAggregatedCounter` (
   PRIMARY KEY (`Id`),
   UNIQUE KEY `IX_HangfireCounterAggregated_Key` (`Key`),
   KEY `IX_AggregatedCounter_ExpireAt` (`ExpireAt`)
-) ENGINE=InnoDB AUTO_INCREMENT=181 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=826 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4906,7 +5472,7 @@ CREATE TABLE `HangfireCounter` (
   `ExpireAt` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `IX_HangfireCounter_Key` (`Key`)
-) ENGINE=InnoDB AUTO_INCREMENT=379 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3150 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4939,7 +5505,7 @@ CREATE TABLE `HangfireHash` (
   PRIMARY KEY (`Id`),
   UNIQUE KEY `IX_HangfireHash_Key_Field` (`Key`,`Field`),
   KEY `IX_Hash_ExpireAt` (`ExpireAt`)
-) ENGINE=InnoDB AUTO_INCREMENT=383 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1954 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4960,7 +5526,7 @@ CREATE TABLE `HangfireJob` (
   PRIMARY KEY (`Id`),
   KEY `IX_HangfireJob_StateName` (`StateName`),
   KEY `IX_Job_ExpireAt` (`ExpireAt`)
-) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1317 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4979,7 +5545,7 @@ CREATE TABLE `HangfireJobParameter` (
   UNIQUE KEY `IX_HangfireJobParameter_JobId_Name` (`JobId`,`Name`),
   KEY `FK_HangfireJobParameter_Job` (`JobId`),
   CONSTRAINT `FK_HangfireJobParameter_Job` FOREIGN KEY (`JobId`) REFERENCES `HangfireJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=425 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2047 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4998,7 +5564,7 @@ CREATE TABLE `HangfireJobQueue` (
   PRIMARY KEY (`Id`),
   KEY `IX_HangfireJobQueue_QueueAndFetchedAt` (`Queue`,`FetchedAt`),
   KEY `IX_JobQueue_FetchToken` (`FetchToken`)
-) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=1107 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5084,7 +5650,7 @@ CREATE TABLE `HangfireSet` (
   UNIQUE KEY `IX_HangfireSet_Key_Value` (`Key`,`Value`),
   KEY `IX_Set_ExpireAt` (`ExpireAt`),
   KEY `IX_Set_KeyScore` (`Key`,`Score`,`Value`)
-) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=821 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5104,7 +5670,7 @@ CREATE TABLE `HangfireState` (
   PRIMARY KEY (`Id`),
   KEY `FK_HangfireHangFire_State_Job` (`JobId`),
   CONSTRAINT `FK_HangfireHangFire_State_Job` FOREIGN KEY (`JobId`) REFERENCES `HangfireJob` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=448 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4129 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5336,28 +5902,28 @@ CREATE TABLE `Invoice` (
   KEY `ClassId` (`ClassId`) USING BTREE,
   KEY `index_userfield6` (`UserField6`) USING BTREE,
   CONSTRAINT `Invoice_ibfk_1` FOREIGN KEY (`BillToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_10` FOREIGN KEY (`ShipToId`) REFERENCES `ClientLocation` (`ClientLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_11` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_12` FOREIGN KEY (`SubProjectTypeId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_13` FOREIGN KEY (`ParentInvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_14` FOREIGN KEY (`ApprovalStatusId`) REFERENCES `InvoiceStatus` (`StateId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_15` FOREIGN KEY (`LocationId`) REFERENCES `Location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_16` FOREIGN KEY (`ClassId`) REFERENCES `NSClass` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_17` FOREIGN KEY (`NSDepartmentId`) REFERENCES `NSDepartment` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_18` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_19` FOREIGN KEY (`VerifierId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_2` FOREIGN KEY (`RemitToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_20` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_21` FOREIGN KEY (`VendorLocationId`) REFERENCES `VendorLocation` (`VendorLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_22` FOREIGN KEY (`PrepaymentNoteId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_3` FOREIGN KEY (`ShippedToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_4` FOREIGN KEY (`BatchID`) REFERENCES `Batch` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_5` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_6` FOREIGN KEY (`CustomerLocationId`) REFERENCES `CustomerLocation` (`CustomerLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_7` FOREIGN KEY (`VendorSiteId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_8` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Invoice_ibfk_9` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=663283312 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `Invoice_ibfk_10` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_11` FOREIGN KEY (`VerifierId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_12` FOREIGN KEY (`RemitToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_13` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_14` FOREIGN KEY (`VendorLocationId`) REFERENCES `VendorLocation` (`VendorLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_15` FOREIGN KEY (`PrepaymentNoteId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_16` FOREIGN KEY (`ShippedToAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_17` FOREIGN KEY (`BatchID`) REFERENCES `Batch` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_18` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_19` FOREIGN KEY (`CustomerLocationId`) REFERENCES `CustomerLocation` (`CustomerLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_2` FOREIGN KEY (`ShipToId`) REFERENCES `ClientLocation` (`ClientLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_20` FOREIGN KEY (`VendorSiteId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_21` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_22` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_3` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_4` FOREIGN KEY (`SubProjectTypeId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_5` FOREIGN KEY (`ParentInvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_6` FOREIGN KEY (`ApprovalStatusId`) REFERENCES `InvoiceStatus` (`StateId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_7` FOREIGN KEY (`LocationId`) REFERENCES `Location` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_8` FOREIGN KEY (`ClassId`) REFERENCES `NSClass` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Invoice_ibfk_9` FOREIGN KEY (`NSDepartmentId`) REFERENCES `NSDepartment` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=663283398 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -5714,7 +6280,7 @@ CREATE TABLE `InvoiceArchiveReason` (
   `LastUsed` date NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `InvoiceArchiveReason_idx` (`ClientId`,`ArchiveReason`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2256 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2266 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5825,7 +6391,7 @@ CREATE TABLE `InvoiceDocs` (
   UNIQUE KEY `unique_index_invoiceid_url` (`InvoiceId`,`Url`) USING BTREE,
   KEY `IX_InvoiceId` (`InvoiceId`) USING BTREE,
   CONSTRAINT `InvoiceDocs_ibfk_1` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=15330567 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15330713 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5873,7 +6439,7 @@ CREATE TABLE `InvoiceHistory` (
   KEY `IX_InvoiceId` (`InvoiceId`) USING BTREE,
   CONSTRAINT `InvoiceHistory_ibfk_1` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `InvoiceHistory_ibfk_2` FOREIGN KEY (`ActorId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=178304702 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=178307157 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6079,6 +6645,19 @@ CREATE TABLE `ItemVendor` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `JsonLoop`
+--
+
+DROP TABLE IF EXISTS `JsonLoop`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `JsonLoop` (
+  `id` bigint unsigned NOT NULL,
+  `jsondata` json DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `LineItemDetail`
 --
 
@@ -6166,17 +6745,17 @@ CREATE TABLE `LineItemDetail` (
   KEY `AssetProjectId` (`AssetProjectId`) USING BTREE,
   KEY `FK_LineItemDetail_Item_ItemId` (`ItemId`) USING BTREE,
   CONSTRAINT `LineItemDetail_ibfk_1` FOREIGN KEY (`ClientCompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_10` FOREIGN KEY (`POId`) REFERENCES `PO` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_11` FOREIGN KEY (`AssetProjectId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_2` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_3` FOREIGN KEY (`OtherChargesId`) REFERENCES `OtherCharges` (`OtherChargesId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_4` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_5` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_6` FOREIGN KEY (`SubProjectTypeId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_7` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_8` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `LineItemDetail_ibfk_9` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=27389302 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `LineItemDetail_ibfk_10` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_11` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_2` FOREIGN KEY (`POId`) REFERENCES `PO` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_3` FOREIGN KEY (`AssetProjectId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_4` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_5` FOREIGN KEY (`OtherChargesId`) REFERENCES `OtherCharges` (`OtherChargesId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_6` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_7` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_8` FOREIGN KEY (`SubProjectTypeId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `LineItemDetail_ibfk_9` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=27389417 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6433,9 +7012,9 @@ CREATE TABLE `Notification` (
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -6475,9 +7054,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -6517,9 +7096,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -6622,7 +7201,7 @@ CREATE TABLE `OrgData` (
   PRIMARY KEY (`Id`),
   KEY `IX_ClientId` (`ClientId`) USING BTREE,
   CONSTRAINT `OrgData_ibfk_1` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=9432 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9431 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -6759,25 +7338,25 @@ CREATE TABLE `PO` (
   KEY `AssetProjectId` (`AssetProjectId`) USING BTREE,
   KEY `FK_PO_ibfk_5` (`ItemId`) USING BTREE,
   CONSTRAINT `PO_ibfk_1` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_10` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_11` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_12` FOREIGN KEY (`AssetProjectId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_2` FOREIGN KEY (`ClientCompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_3` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_4` FOREIGN KEY (`ExpenseTypeId`) REFERENCES `ExpenseType` (`ExpenseId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_5` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_6` FOREIGN KEY (`PurchaserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_7` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_8` FOREIGN KEY (`SubProjectTypeId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PO_ibfk_9` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `PO_ibfk_10` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_11` FOREIGN KEY (`SubProjectTypeId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_12` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_2` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_3` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_4` FOREIGN KEY (`AssetProjectId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_5` FOREIGN KEY (`ClientCompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_6` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_7` FOREIGN KEY (`ExpenseTypeId`) REFERENCES `ExpenseType` (`ExpenseId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_8` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PO_ibfk_9` FOREIGN KEY (`PurchaserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=389677220 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -7012,28 +7591,28 @@ CREATE TABLE `POHeader` (
   KEY `POHeader_PaymentTerm_PaymentTermId` (`PaymentTermId`) USING BTREE,
   KEY `POHeader_TermAndCondition_TermAndConditionId` (`TermAndConditionId`) USING BTREE,
   CONSTRAINT `POHeader_ibfk_1` FOREIGN KEY (`DeliveryAddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_10` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_11` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_12` FOREIGN KEY (`PurchasedForUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_13` FOREIGN KEY (`ProjectId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_14` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_15` FOREIGN KEY (`SubProjectId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_16` FOREIGN KEY (`OrderPlacedByUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_17` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_18` FOREIGN KEY (`LockedById`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_19` FOREIGN KEY (`ProjectUsageId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_2` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_20` FOREIGN KEY (`AssetProjectId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_21` FOREIGN KEY (`BudgetedAssetId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_22` FOREIGN KEY (`PaymentTermId`) REFERENCES `PaymentTerm` (`PaymentTermId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_23` FOREIGN KEY (`TermAndConditionId`) REFERENCES `TermAndCondition` (`TermAndConditionId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_3` FOREIGN KEY (`ShipToId`) REFERENCES `ClientLocation` (`ClientLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_4` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_5` FOREIGN KEY (`CompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_6` FOREIGN KEY (`VendorLocationId`) REFERENCES `VendorLocation` (`VendorLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_7` FOREIGN KEY (`ShippingTermId`) REFERENCES `ShippingTerms` (`ShippingTermId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_8` FOREIGN KEY (`FreightCodeId`) REFERENCES `FreightCodes` (`FreightCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `POHeader_ibfk_9` FOREIGN KEY (`BuyerId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `POHeader_ibfk_10` FOREIGN KEY (`LockedById`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_11` FOREIGN KEY (`ProjectUsageId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_12` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_13` FOREIGN KEY (`AssetProjectId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_14` FOREIGN KEY (`BudgetedAssetId`) REFERENCES `Lookup` (`LookupId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_15` FOREIGN KEY (`PaymentTermId`) REFERENCES `PaymentTerm` (`PaymentTermId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_16` FOREIGN KEY (`TermAndConditionId`) REFERENCES `TermAndCondition` (`TermAndConditionId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_17` FOREIGN KEY (`ShipToId`) REFERENCES `ClientLocation` (`ClientLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_18` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_19` FOREIGN KEY (`CompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_2` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_20` FOREIGN KEY (`VendorLocationId`) REFERENCES `VendorLocation` (`VendorLocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_21` FOREIGN KEY (`ShippingTermId`) REFERENCES `ShippingTerms` (`ShippingTermId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_22` FOREIGN KEY (`FreightCodeId`) REFERENCES `FreightCodes` (`FreightCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_23` FOREIGN KEY (`BuyerId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_3` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_4` FOREIGN KEY (`PurchasedForUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_5` FOREIGN KEY (`ProjectId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_6` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_7` FOREIGN KEY (`SubProjectId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_8` FOREIGN KEY (`OrderPlacedByUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `POHeader_ibfk_9` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=152230 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -7303,7 +7882,7 @@ CREATE TABLE `PaymentStatus` (
   KEY `IDX_PaymentStatus_ReceivedDate` (`ReceivedDate`) USING BTREE,
   CONSTRAINT `PaymentStatus_ibfk_1` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `PaymentStatus_ibfk_2` FOREIGN KEY (`TransactionTypeId`) REFERENCES `TransactionType` (`Id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=1833468 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1833574 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7426,25 +8005,25 @@ CREATE TABLE `PendingApprovalHistory` (
   KEY `FK_PendingApprovalHistory_SubCategory2` (`SubCategory2`) USING BTREE,
   KEY `IX_InvoiceId` (`InvoiceId`) USING BTREE,
   CONSTRAINT `PendingApprovalHistory_ibfk_1` FOREIGN KEY (`AccountingVariable1`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_10` FOREIGN KEY (`GLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_11` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_12` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_13` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_14` FOREIGN KEY (`ProjectId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_15` FOREIGN KEY (`SubCategory1`) REFERENCES `SubCategrory` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_16` FOREIGN KEY (`SubCategory2`) REFERENCES `SubCategrory` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_17` FOREIGN KEY (`SubProjectId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_18` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_19` FOREIGN KEY (`OrgId`) REFERENCES `OrgData` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_2` FOREIGN KEY (`AccountingVariable2`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_3` FOREIGN KEY (`AccountingVariable3`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_4` FOREIGN KEY (`AccountingVariable4`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_5` FOREIGN KEY (`Category1`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_6` FOREIGN KEY (`Category2`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_7` FOREIGN KEY (`CategoryId`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_8` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `PendingApprovalHistory_ibfk_9` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=989692 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `PendingApprovalHistory_ibfk_10` FOREIGN KEY (`TaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_11` FOREIGN KEY (`OrgId`) REFERENCES `OrgData` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_12` FOREIGN KEY (`AccountingVariable2`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_13` FOREIGN KEY (`AccountingVariable3`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_14` FOREIGN KEY (`AccountingVariable4`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_15` FOREIGN KEY (`Category1`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_16` FOREIGN KEY (`Category2`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_17` FOREIGN KEY (`CategoryId`) REFERENCES `Category` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_18` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_19` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_2` FOREIGN KEY (`GLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_3` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_4` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_5` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_6` FOREIGN KEY (`ProjectId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_7` FOREIGN KEY (`SubCategory1`) REFERENCES `SubCategrory` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_8` FOREIGN KEY (`SubCategory2`) REFERENCES `SubCategrory` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `PendingApprovalHistory_ibfk_9` FOREIGN KEY (`SubProjectId`) REFERENCES `SubProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=989796 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7469,7 +8048,7 @@ CREATE TABLE `Performance` (
   CONSTRAINT `Performance_ibfk_1` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `Performance_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `Performance_ibfk_3` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=12610230 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12610225 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7724,7 +8303,7 @@ CREATE TABLE `ReportClientSchedule` (
   KEY `ReportClientSchedule_ReportClient` (`ReportKey`,`ClientId`),
   CONSTRAINT `ReportClientSchedule_ReportClient` FOREIGN KEY (`ReportKey`, `ClientId`) REFERENCES `ReportClient` (`ReportKey`, `ClientId`),
   CONSTRAINT `ReportClientSchedule_User` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -7743,7 +8322,7 @@ CREATE TABLE `ReportClientScheduleFieldOutput` (
   `SortOrder` int DEFAULT NULL,
   PRIMARY KEY (`ReportScheduleId`,`ReportKey`,`Field`),
   KEY `ReportClientScheduleFieldOutput_ReportKeyField` (`ReportKey`,`Field`),
-  CONSTRAINT `ReportClientScheduleFieldOutput_ReportKeyField` FOREIGN KEY (`ReportKey`, `Field`) REFERENCES `ReportFields` (`ReportKey`, `Field`),
+  CONSTRAINT `ReportClientScheduleFieldOutput_ReportKeyField` FOREIGN KEY (`ReportKey`, `Field`) REFERENCES `ReportFieldOutput` (`ReportKey`, `Field`),
   CONSTRAINT `ReportClientScheduleFieldOutput_ReportScheduleId` FOREIGN KEY (`ReportScheduleId`) REFERENCES `ReportClientSchedule` (`ReportScheduleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -7867,7 +8446,7 @@ CREATE TABLE `ReportRun` (
   KEY `ReportRun_ClientId` (`ClientId`),
   CONSTRAINT `ReportRun_ClientId` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`),
   CONSTRAINT `ReportRun_ReportKey` FOREIGN KEY (`ReportKey`) REFERENCES `Report` (`ReportKey`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=461 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -8290,16 +8869,16 @@ CREATE TABLE `StockRequest` (
   KEY `FK_StockRequest_Vendor_VendorId` (`VendorId`) USING BTREE,
   KEY `FK_StockRequest_User_OrderPlacedByUserId` (`OrderPlacedByUserId`) USING BTREE,
   CONSTRAINT `StockRequest_ibfk_1` FOREIGN KEY (`BuyerId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_10` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_11` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_2` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_3` FOREIGN KEY (`CompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_4` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_5` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_6` FOREIGN KEY (`LockedById`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_7` FOREIGN KEY (`PurchasedForUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_8` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `StockRequest_ibfk_9` FOREIGN KEY (`OrderPlacedByUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `StockRequest_ibfk_10` FOREIGN KEY (`ApproverId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_11` FOREIGN KEY (`OrderPlacedByUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_3` FOREIGN KEY (`VendorId`) REFERENCES `Vendor` (`VendorId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_4` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_5` FOREIGN KEY (`CompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_6` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_7` FOREIGN KEY (`ItemId`) REFERENCES `Item` (`ItemId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_8` FOREIGN KEY (`LockedById`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `StockRequest_ibfk_9` FOREIGN KEY (`PurchasedForUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=1115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -9016,7 +9595,7 @@ CREATE TABLE `UserActivity` (
   PRIMARY KEY (`ActivityID`),
   KEY `UserActivity_User` (`UserId`),
   CONSTRAINT `UserActivity_User` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14764 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9075,7 +9654,7 @@ CREATE TABLE `UserDepartment` (
   KEY `IX_UserId` (`UserId`) USING BTREE,
   CONSTRAINT `UserDepartment_ibfk_1` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `UserDepartment_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=19795 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19799 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9105,7 +9684,7 @@ CREATE TABLE `UserInvoiceAssignment` (
   CONSTRAINT `UserInvoiceAssignment_ibfk_1` FOREIGN KEY (`AssignBackToUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `UserInvoiceAssignment_ibfk_2` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `UserInvoiceAssignment_ibfk_3` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=19928297 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19928489 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9135,7 +9714,7 @@ CREATE TABLE `UserInvoiceAssignmentHistory` (
   CONSTRAINT `UserInvoiceAssignmentHistory_ibfk_3` FOREIGN KEY (`InvoiceId`) REFERENCES `Invoice` (`InvoiceId`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `UserInvoiceAssignmentHistory_ibfk_4` FOREIGN KEY (`FromApprovalSubStepUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `UserInvoiceAssignmentHistory_ibfk_5` FOREIGN KEY (`ToApprovalSubStepUserId`) REFERENCES `User` (`UserId`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=19415645 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19415621 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9171,7 +9750,7 @@ CREATE TABLE `UserNotification` (
   PRIMARY KEY (`NotificationID`),
   KEY `UserNotification_idx` (`UserId`,`NotificationID`) USING BTREE,
   CONSTRAINT `UserNotification_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=813 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4974 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9279,7 +9858,7 @@ CREATE TABLE `UserReassignmentHistory` (
   CONSTRAINT `UserReassignmentHistory_ibfk_1` FOREIGN KEY (`SourceUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `UserReassignmentHistory_ibfk_2` FOREIGN KEY (`TargetUserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `UserReassignmentHistory_ibfk_3` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=803 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=806 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9564,19 +10143,19 @@ CREATE TABLE `Vendor` (
   KEY `IDX_PMT_Vendor` (`ClientId`,`VendorNo`,`CompanyCode`) USING BTREE,
   KEY `vendor_userId` (`UserId`) USING BTREE,
   CONSTRAINT `Vendor_ibfk_1` FOREIGN KEY (`AddressId`) REFERENCES `Address` (`AddressId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_10` FOREIGN KEY (`orgDataId`) REFERENCES `OrgData` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_11` FOREIGN KEY (`DefaultTaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_12` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_13` FOREIGN KEY (`VendorSiteId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_2` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_3` FOREIGN KEY (`ClientCompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_4` FOREIGN KEY (`FreightGLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_5` FOREIGN KEY (`TaxGLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_6` FOREIGN KEY (`FreightCodeId`) REFERENCES `FreightCodes` (`FreightCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_7` FOREIGN KEY (`ShippingTermId`) REFERENCES `ShippingTerms` (`ShippingTermId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_8` FOREIGN KEY (`ClassId`) REFERENCES `NSClass` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `Vendor_ibfk_9` FOREIGN KEY (`NSDepartmentId`) REFERENCES `NSDepartment` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=1555836074 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `Vendor_ibfk_10` FOREIGN KEY (`FreightCodeId`) REFERENCES `FreightCodes` (`FreightCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_11` FOREIGN KEY (`ShippingTermId`) REFERENCES `ShippingTerms` (`ShippingTermId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_12` FOREIGN KEY (`ClassId`) REFERENCES `NSClass` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_13` FOREIGN KEY (`NSDepartmentId`) REFERENCES `NSDepartment` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_2` FOREIGN KEY (`orgDataId`) REFERENCES `OrgData` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_3` FOREIGN KEY (`DefaultTaxCodeId`) REFERENCES `Tax` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_4` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_5` FOREIGN KEY (`VendorSiteId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_6` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_7` FOREIGN KEY (`ClientCompanyId`) REFERENCES `ClientCompany` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_8` FOREIGN KEY (`FreightGLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `Vendor_ibfk_9` FOREIGN KEY (`TaxGLCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=1555836073 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9664,18 +10243,18 @@ CREATE TABLE `VendorGlDefault` (
   KEY `VendorSiteId` (`VendorSiteId`) USING BTREE,
   KEY `VendorGlDefault_ibfk_OrgData_OrgId` (`OrgId`) USING BTREE,
   CONSTRAINT `VendorGlDefault_ibfk_1` FOREIGN KEY (`AccountingVariable1`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_10` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_11` FOREIGN KEY (`VendorSiteId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_12` FOREIGN KEY (`OrgId`) REFERENCES `OrgData` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_2` FOREIGN KEY (`AccountingVariable2`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_3` FOREIGN KEY (`AccountingVariable3`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_4` FOREIGN KEY (`AccountingVariable4`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_5` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_6` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_7` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_8` FOREIGN KEY (`GlCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `VendorGlDefault_ibfk_9` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=124301 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `VendorGlDefault_ibfk_10` FOREIGN KEY (`DepartmentId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_11` FOREIGN KEY (`GlCodeId`) REFERENCES `GLCode` (`GLCodeId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_12` FOREIGN KEY (`ProjectTypeId`) REFERENCES `ProjectType` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `User` (`UserId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_3` FOREIGN KEY (`VendorSiteId`) REFERENCES `Department` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_4` FOREIGN KEY (`OrgId`) REFERENCES `OrgData` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_5` FOREIGN KEY (`AccountingVariable2`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_6` FOREIGN KEY (`AccountingVariable3`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_7` FOREIGN KEY (`AccountingVariable4`) REFERENCES `AccountingVariable` (`Id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_8` FOREIGN KEY (`ClientId`) REFERENCES `Client` (`ClientId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `VendorGlDefault_ibfk_9` FOREIGN KEY (`CustomerId`) REFERENCES `Customer` (`CustomerId`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=124319 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -10513,7 +11092,7 @@ CREATE TABLE `zz_InvoicesInLimbo_Steven` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping routines for database 'dbQA'
+-- Dumping routines for database 'dbDev'
 --
 /*!50003 DROP FUNCTION IF EXISTS `AddDays` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -15383,6 +15962,36 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetActiveUsersWithExpiryDates` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `GetActiveUsersWithExpiryDates`(IN ClientIdParam INT)
+BEGIN
+    SELECT 
+        UserId,
+        UserName,
+        Duration,
+        LastPasswordChangeDate,
+        DATE_ADD(LastPasswordChangeDate, INTERVAL Duration DAY) AS ExpireDate,
+        IsActive
+    FROM `User`
+    WHERE 
+        IsActive = 1
+        AND ClientId = ClientIdParam
+        AND (Duration IS NOT NULL AND LastPasswordChangeDate IS NOT NULL);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `GetAdminInvoiceCount` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -16959,6 +17568,33 @@ BEGIN
   AND lid.UserField8 = 'credit'
   ORDER BY i.InvoiceId, i.ScannedDate;
 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GetCurrencyExchange` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `GetCurrencyExchange`(
+    IN fromCurrency VARCHAR(10),
+    IN toCurrency VARCHAR(10),
+    IN exchangeDate DATE
+)
+BEGIN
+    SELECT ExchangeRate 
+    FROM DailyExchangeRate
+    WHERE FromCurrency = fromCurrency 
+      AND ToCurrency = toCurrency 
+      AND (Date = exchangeDate OR Date = CURDATE());
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -25284,6 +25920,31 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `InsertCurrencyExchange` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `InsertCurrencyExchange`(
+    IN fromCurrency VARCHAR(10),
+    IN toCurrency VARCHAR(10),
+    IN exchangeDate DATE,
+    IN exchangeRate DECIMAL(18, 6)
+)
+BEGIN
+    INSERT INTO DailyExchangeRate (FromCurrency, ToCurrency, Date, ExchangeRate)
+    VALUES (fromCurrency, toCurrency, exchangeDate, exchangeRate);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `InsertGLByApprover` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -31681,6 +32342,89 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `xxx_Michael` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `xxx_Michael`(
+    IN pClientId INT
+)
+ThisProc:
+
+BEGIN
+    -- Calculate the target date/time
+    SET @TargetDate = DATE_ADD(@CurrentDate, INTERVAL pDaysUntilExpiration DAY);
+
+    -- Select users whose passwords will expire in the specified number of days
+    SELECT 
+	        u.UserId,
+	        CONCAT(u.FirstName, ' ', u.LastName) 						AS FullName,
+	        DATE_ADD(u.LastPasswordChangeDate, INTERVAL u.Duration DAY) AS ExpireDateTime
+    FROM 	`User` u
+			inner JOIN Client 					on Client.ClientId = u.ClientId
+			inner join _x_ClientCompany xcc		ON xcc.ClientId = Client.ClientId -- Currently migrated users
+			LEFT JOIN _x_ClientParameters xcp 	ON xcp.ClientId = Client.ClientId
+													AND xcp.ParamKey = 'PasswordExpiringDays'
+    WHERE 	Client.IsActive = 1
+			AND u.IsActive = 1
+	        AND u.Duration IS NOT NULL 
+	        AND u.LastPasswordChangeDate IS NOT NULL 
+	        AND (pClientId IS NULL OR u.ClientId = pClientId)
+	        AND DATE_ADD(u.LastPasswordChangeDate, INTERVAL u.Duration DAY) 
+	            BETWEEN @CurrentDateTime AND @TargetDate
+    ORDER 	BY ExpireDateTime ASC;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `xxx_Michael_Steven` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `xxx_Michael_Steven`(
+    IN pClientId INT
+)
+ThisProc:BEGIN
+
+    -- Select users whose passwords will expire within the specified number of days (default to 7 if not defined)
+    SELECT 
+			if(u.IsCloudxUser = 1, 'CloudX', Client.CustomerName) 									AS Client,
+	        CONCAT(u.FirstName, ' ', u.LastName) 													AS FullName,
+	        max(DATE_ADD(u.LastPasswordChangeDate, INTERVAL Security_Password_ExpirationDays DAY)) 	AS ExpiringOn,
+	        max(u.UserId) 																			as UserId
+    FROM 	User u
+			inner JOIN Client 					on Client.ClientId = u.ClientId
+			inner join _x_Client xc				ON xc.ClientId = Client.ClientId -- Currently migrated Clients
+			LEFT JOIN _x_ClientParameters xcp 	ON xcp.ClientId = Client.ClientId
+													AND xcp.ParamKey = 'PasswordExpiringDays'
+    WHERE 	Client.IsActive = 1
+			AND u.IsActive = 1
+			AND u.LastPasswordChangeDate IS not null
+			AND datediff(date(date_add(LastPasswordChangeDate, INTERVAL Security_Password_ExpirationDays day)), utc_date()) BETWEEN 0 AND ifnull(xcp.ParamValue, 7)
+	GROUP 	BY Client, FullName
+    ORDER 	BY IF(Client='CloudX', 1, 9), Client, FullName;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `zz_InvoicesInLimbo` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -32870,11 +33614,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_Completed`(IN pInvoiceIds text,
 IN pPaymentId varchar(100),
@@ -32941,11 +33685,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_FakeError`(
 -- noformat 
@@ -32990,7 +33734,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_GetClients`()
 BEGIN
@@ -33042,7 +33786,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_GetClientsForStatusUpdate`()
 BEGIN
@@ -33090,7 +33834,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_GetInvoices`(IN `pClientId` int,
 IN pCompanyCode varchar(50))
@@ -33143,7 +33887,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_GetStatusFromProvider`(IN `pClientId` int,
 IN pCompanyCode varchar(50))
@@ -33193,11 +33937,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_xc_Payment_UpdateInvoiceStatus`(
 -- noformat
@@ -39959,11 +40703,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_DataLoadGLCode`(IN pType tinyint, IN pGLCodeId int,
                                                          IN pGLCodeName varchar(250), IN pDescription varchar(500),
@@ -40067,11 +40811,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_DataLoadVendor`(IN pType tinyint,
 IN pClientId int,
@@ -46056,6 +46800,105 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `_x_InvoiceArchive` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_InvoiceArchive`(
+-- noformat 
+	IN pInvoiceId 		int,
+	IN pClientId 		int,
+	IN pUserId 			char(36),
+	IN pReason	 		longtext
+	)
+ThisProc:BEGIN
+
+
+	-- Get security
+	SELECT	max(cr.isAdmin), ifnull(Max(case WHEN crf.FunctionKey IN ('InvoiceUpdate', 'InvoiceApprove') THEN crf.access ELSE 0 end), 0)
+	INTO 	@isAdmin, @isAllowed
+	FROM	ClientUserRoles cur
+	 		INNER JOIN	ClientRoles cr				ON cr.RoleId = cur.RoleId
+			left JOIN 	ClientRoleFunctions crf		ON crf.RoleId = cr.RoleId
+	WHERE	cur.UserId = pUserId;
+	SET @isAllowed = IF(@isAdmin = 1, 1, @isAllowed); 
+
+
+	-- Get Invoice Info
+	SELECT	i.InvoiceType, i.IsPaused, i.isDeleted, i.ApprovalStatusId
+	INTO	@InvoiceType, @IsPaused, @isDeleted, @ApprovalStatusId
+	FROM 	Invoice i
+	WHERE 	i.ClientId = pClientId
+			AND i.InvoiceId = pInvoiceId;
+
+	-- Check if the invoice is in the right state to do this action
+	IF @IsDeleted = 1 THEN
+		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice is already deleted.', MYSQL_ERRNO = 1;
+		LEAVE ThisProc;
+	elseIF @InvoiceType = 'Archive' THEN
+		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice has already been archived.', MYSQL_ERRNO = 1;
+		LEAVE ThisProc;
+	ElseIF NOT @ApprovalStatusId IN (1,3,4,5,6,8) THEN
+		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice is not in an actionable status.', MYSQL_ERRNO = 1;
+		LEAVE ThisProc;
+	end if;
+
+
+	-- if not an admin, check if this is in their queue
+	IF @isAdmin = 0 then
+		set @Position	= NULL;
+		set @Total 		= null;
+		call _x_InvoiceMyQueue(pUserId, pInvoiceId, 1, 0, 0, null, @Position, @Total);
+	
+		if @Position is null then 
+			SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'The invoice is no longer in your queue.', MYSQL_ERRNO = 1;
+			LEAVE ThisProc;
+		end if;
+	END if;
+
+
+
+	--
+	-- Do the action, all business logic passed
+	--
+	call _x_InvoiceUpdateDataChanges(pInvoiceId, pClientId, pUserId, 'Before');
+
+	delete FROM PausedInvoice where InvoiceId = pInvoiceId;
+
+	UPDATE	Invoice 	set 
+			IsPaused 		= False,
+			InvoiceType 	= 'Archive',
+			ArchiveReason	= pReason,
+			LastActionBy	= pUserId,
+			LastActionDate 	= UTC_TIMESTAMP()
+	WHERE	InvoiceId = pInvoiceId
+			AND ClientId = pClientId;
+	
+	Insert into InvoiceArchiveReason(ClientId, ArchiveReason, TotalCount, LastUsed)
+		values(pClientId, pReason, 1, date(UTC_TIMESTAMP()))
+		on Duplicate key Update TotalCount = TotalCount + 1, LastUsed = date(LastUsed);
+
+	Delete 	from UserInvoiceAssignment
+			where InvoiceId = pInvoiceId;
+
+	Delete	from UserNotification
+			where LinkPage = 'Invoice' and LinkValue = pInvoiceId and ReadStatus = 0;
+
+	call _x_InvoiceUpdateDataChanges(pInvoiceId, pClientId, pUserId, 'After');
+
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `_x_InvoiceById` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -46333,9 +47176,9 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -47116,14 +47959,14 @@ ThisProc:BEGIN
 	IF @IsDeleted = 1 THEN
 		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice is already deleted.', MYSQL_ERRNO = 1;
 		LEAVE ThisProc;
-	elseIF @InvoiceType = 'Archive' THEN
+	elseIF @InvoiceType = 'Archive' AND pIsPaused = true THEN
 		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice has already been archived.', MYSQL_ERRNO = 1;
 		LEAVE ThisProc;
 	ElseIF @IsPaused = pIsPaused THEN
 		SET @Msg = concat('This invoice has already been ', if(pIsPaused, 'paused', 'unpaused'), '.');
 		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = @Msg, MYSQL_ERRNO = 1;
 		LEAVE ThisProc;
-	ElseIF NOT @ApprovalStatusId IN (1,3,4,5,6,8) THEN
+	ElseIF pIsPaused = TRUE AND NOT @ApprovalStatusId IN (1,3,4,5,6,8) THEN
 		SIGNAL SQLSTATE '42000' SET MESSAGE_TEXT = 'This invoice is not in an actionable status.', MYSQL_ERRNO = 1;
 		LEAVE ThisProc;
 	end if;
@@ -47153,7 +47996,8 @@ ThisProc:BEGIN
 
 	IF (pIsPaused = TRUE) THEN /*Pause Invoice*/
 		UPDATE	Invoice set 
-				IsPaused = TRUE,
+				IsPaused 		= TRUE,
+				LastActionBy	= pUserId,
 				LastActionDate = UTC_TIMESTAMP()
 		WHERE	InvoiceId = pInvoiceId
 				AND ClientId = pClientId;
@@ -47163,6 +48007,9 @@ ThisProc:BEGIN
 			on duplicate key 	update 	PauseBy		= pUserId,
 										PausedDate 	= UTC_TIMESTAMP(),
 										Comment		= pComment;
+
+		Delete	from UserNotification
+				where LinkPage = 'Invoice' and LinkValue = pInvoiceId and ReadStatus = 0;
 
 		set @Message = null;
 		select 	concat('Invoice paused for', char(13), char(10), VendorName, char(13), char(10), pComment)
@@ -47176,7 +48023,10 @@ ThisProc:BEGIN
 	
 	ELSEIF (pIsPaused = FALSE) THEN /*Unpause Invoice*/
 
-		UPDATE	Invoice		SET IsPaused = FALSE
+		UPDATE	Invoice		SET 
+				IsPaused 		= FALSE,
+				LastActionBy	= pUserId,
+				LastActionDate = UTC_TIMESTAMP()
 		WHERE	InvoiceId = pInvoiceId
 				AND ClientId = pClientId;
 		
@@ -47191,7 +48041,7 @@ ThisProc:BEGIN
 				and Data.LinkPage = 'Invoice' 
 				and Data.LinkValue = pInvoiceId 
 				and Data.ReadDate is null;
-		
+	
 	END IF;
 
 	call _x_InvoiceUpdateDataChanges(pInvoiceId, pClientId, pUserId, 'After');
@@ -49760,7 +50610,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentApprovalGenerate`(IN pClientId int, IN pFirstTime int)
 ThisProc:
@@ -50027,7 +50877,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb3 */ ;
 /*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentApprove`(
 -- noformat
@@ -50101,11 +50951,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentCancel`(IN pUserId varchar(36), IN pInvoiceIdList text)
 ThisProc:
@@ -50173,11 +51023,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentCheckEnabled`(IN pClientId int,
 IN pActionType varchar(50),
@@ -50209,11 +51059,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_PaymentDiscount`(IN `pClientId` int,
 IN `pInvoiceId` int,
@@ -56817,11 +57667,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb3 */ ;
-/*!50003 SET character_set_results = utf8mb3 */ ;
-/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `_x_SigninReset`(IN pType tinyint, IN pClientId int, IN pUsername varchar(50),
                                                       IN pPassword varchar(50), IN pAccessCode varchar(50),
@@ -64007,6 +64857,29 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `__ToggleClientStatus` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb3 */ ;
+/*!50003 SET character_set_results = utf8mb3 */ ;
+/*!50003 SET collation_connection  = utf8mb3_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`cloudxuser`@`%` PROCEDURE `__ToggleClientStatus`(IN pClientId int, IN pIsActive boolean)
+ThisProc:
+	BEGIN	
+       UPDATE Client
+    SET IsActive = pIsActive
+    WHERE ClientId =  pClientId;
+
+	END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Final view structure for view `Coinstar-ApproverByAmountWithVendor`
@@ -64054,4 +64927,4 @@ SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-26 21:48:34
+-- Dump completed on 2025-01-27 16:01:06
